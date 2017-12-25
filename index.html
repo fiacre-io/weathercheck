@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Check</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Autocomplete -->
+    <script src="js/teleport-autocomplete.js"></script>
+</head>
+<body>
+    <div class="primary-wrapper">
+        <div class="main-container">
+            <!-- Search -->
+            <div class="inputField clearfix">
+                <h1 class="inputPlaceholder">Search For A City</h1>
+                <input type="text" id="city" class="my-input" name="field" placeholder="Search For a City" tabindex="1" autocomplete="off">
+                <input type="button" id="submit" value="Search">
+            </div>
+            <div class="results"></div>
+            <div id="error"></div>
+        </div>
+        <div class="secondary-wrapper">
+            <!-- Location -->
+            <section class="location">
+                <h2 class="date"></h2>
+                <span class="locationData"></span>
+            </section>
+            <!-- Weather -->
+            <section class="weatherSection">
+                <!-- Temperature -->
+                <div class="weatherData">
+                    <div class="temp">
+                        <span>Temperature: </span><h2 class="tempValue weatherValue"></h2><span class="weatherUnits">Centigrade</span>
+                    </div>
+                </div>
+                <!-- Conditions -->
+                <div class="weatherData">
+                    <span>Conditions: </span><h2 class="mainConditionValue weatherValue"></h2>
+                </div>
+                <!-- Windspeed -->
+                <div class="weatherData">
+                    <span>Wind Speed: </span><h2 class="windspeedValue weatherValue"></h2>
+                    <span class="weatherUnits"> Meters/Second</span>
+                </div>
+                <!-- Humidity -->
+                <div class="weatherData">
+                    <span>Humidity: </span><h2 class="humidityValue weatherValue"></h2>
+                    <span class="weatherUnits"> %</span>
+                </div>
+                <div class="search">
+                    <button class="changeLocation">Search Again</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+<!-------- Scripts ------->
+    <!-- Jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+<!-- Local -->
+    <script src="js/script.js"></script>
+<!-- Autocomplete -->
+    <script>
+      var $results = document.querySelector('.results');
+      var appendToResult = $results.insertAdjacentHTML.bind($results, 'afterend');
+      new TeleportAutocomplete({ el: '.my-input', maxItems: 5, geoLocate: false });
+      TeleportAutocomplete.init('.my-input').on('change', function(value) {
+        appendToResult('<pre>' + JSON.stringify(value, null, 5) + '</pre>');
+    });
+</script>
+</body>
+</html>

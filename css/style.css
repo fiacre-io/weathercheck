@@ -1,0 +1,248 @@
+body {
+  background-color: #7F0002;
+  height: 100vh;
+  overflow: hidden;
+  font-family:'Titillium Web', Arial, sans-serif;
+  color: #fefefe;
+}
+
+
+.primary-wrapper {
+  transition: all 0.4s;
+}
+
+/*  Search page  */
+
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+.main-container .inputField {
+  position: relative;
+  margin-right: 2vw;
+  border-bottom: 1px solid white;
+  padding-bottom: 2vh;
+  width: 60%;
+}
+.main-container .inputField .inputPlaceholder {
+  font-size: 30px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s;
+  float: left;
+}
+
+.main-container .inputField #city {
+  font-size: 30px;
+  font-weight: 400;
+  color: #fefefe;
+  background-color: transparent;
+  border: none;
+  height: 50px;
+  width: 90%;
+  float: left;
+}
+
+.main-container .inputField #city::-webkit-input-placeholder {
+  color: #fefefe;
+  opacity: 0;
+}
+
+
+.main-container .inputField #city[type=text]:focus {
+  outline: none;
+}
+
+
+.main-container .inputField .tp-ac__list {
+  position: absolute;
+  top: 8vh;
+  padding-left: 0;
+}
+
+.main-container .inputField .tp-ac__list li {
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 2;
+  opacity: 0.7;
+  transition: all 0.3;
+}
+
+.main-container .inputField .tp-ac__list li:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+.main-container .inputField #submit {
+  width: 50px;
+  height: 50px;
+  text-indent: -100000px;
+  border: none;
+  background-color: transparent;
+  float: right;
+  display: inline-block;
+  background-image: url(../assets/search.png);
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+pre {
+  display: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+.secondary-wrapper {
+  width: 80%;
+  margin: 40px auto;
+}
+
+/*    Date   */
+
+.location .date {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.location .locationData {
+  text-transform: uppercase;
+  font-size: 60px;
+}
+
+/*  Returned data  */
+
+.weatherSection {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin-top: 5px;
+  flex-direction: column;
+}
+
+.weatherData span {
+  font-size: 80px;
+  opacity: 0.7;
+  font-weight: 600;
+  margin: 0;
+  display: inline-block;
+}
+
+.weatherData .weatherUnits {
+  font-size: 40px;
+  font-weight: 600;
+  margin-left: 3px;
+  position: relative;
+  top: 0;
+}
+
+.weatherSection .weatherValue {
+  font-size: 80px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+  display: inline-block;
+}
+
+/*   Search again button  */
+
+.search button {
+  font-size: 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #fefefe;
+  opacity: 0.7;
+  padding: 10px;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+/*  Media Queries  */
+
+@media(max-width: 900px) {
+  .weatherData span {
+  font-size: 60px;
+  opacity: 0.7;
+  font-weight: 600;
+  margin: 0;
+  display: inline-block;
+}
+
+.weatherData .weatherUnits {
+  font-size: 40px;
+  font-weight: 600;
+  margin-left: 3px;
+  position: relative;
+  top: 0;
+}
+
+.weatherSection .weatherValue {
+  font-size: 60px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+  display: inline-block;
+}
+}
+
+@media(max-width: 600px) {
+
+  .location .date {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.location .locationData {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+  .weatherData span {
+  font-size: 30px;
+  opacity: 0.7;
+  font-weight: 600;
+  margin: 0;
+  display: inline-block;
+}
+
+.weatherData .weatherUnits {
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 3px;
+  position: relative;
+  top: 0;
+}
+
+.weatherSection .weatherValue {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+  display: inline-block;
+}
+}
